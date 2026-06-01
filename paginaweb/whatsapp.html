@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>WhatsApp Business | BioFit Protein</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Hanken+Grotesk:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/whatsapp.css"/>
+</head>
+<body class="whatsapp-page">
+<header class="whatsapp-header">
+    <div class="whatsapp-header__inner">
+        <a href="index.html" class="whatsapp-back">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Volver
+        </a>
+        <span class="material-symbols-outlined" style="color:#25d366;font-size:28px;">chat</span>
+    </div>
+</header>
+
+<main class="whatsapp-main">
+    <article class="whatsapp-panel">
+        <div class="whatsapp-panel__banner">
+            <div class="whatsapp-panel__avatar">
+                <img src="images/logo.png" alt="BioFit Protein"/>
+            </div>
+            <h1 class="whatsapp-panel__name">BioFit Protein</h1>
+            <p class="whatsapp-panel__status">
+                <span class="whatsapp-panel__status-dot"></span>
+                En línea · WhatsApp Business
+            </p>
+        </div>
+        <div class="whatsapp-panel__body">
+            <div class="whatsapp-info">
+                <div class="whatsapp-info__item">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <div>
+                        <p class="whatsapp-info__label">Horario de atención</p>
+                        <p class="whatsapp-info__value">Lun – Sáb · 8:00 a.m. – 8:00 p.m.</p>
+                    </div>
+                </div>
+                <div class="whatsapp-info__item">
+                    <span class="material-symbols-outlined">support_agent</span>
+                    <div>
+                        <p class="whatsapp-info__label">Asesoría</p>
+                        <p class="whatsapp-info__value">Productos, pedidos y envíos</p>
+                    </div>
+                </div>
+                <div class="whatsapp-info__item">
+                    <span class="material-symbols-outlined">call</span>
+                    <div>
+                        <p class="whatsapp-info__label">Teléfono</p>
+                        <p class="whatsapp-info__value" id="whatsapp-phone-display">+57 300 123 4567</p>
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="whatsapp-start-chat" class="whatsapp-chat-btn">
+                <span class="material-symbols-outlined">chat</span>
+                Iniciar chat en WhatsApp
+            </button>
+            <p class="whatsapp-note">
+                Vista temporal de WhatsApp Business. Serás redirigido a WhatsApp para chatear con nuestro equipo.
+            </p>
+        </div>
+    </article>
+</main>
+
+<script src="js/whatsapp.js"></script>
+</body>
+</html>

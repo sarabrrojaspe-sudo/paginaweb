@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Checkout | BioFit Protein</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Hanken+Grotesk:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/checkout.css"/>
+</head>
+<body class="checkout-page">
+<header class="checkout-header">
+    <div class="checkout-header__inner">
+        <a href="index.html" class="checkout-header__logo">
+            <img src="images/logo.png" alt="BioFit Protein"/>
+            <span class="checkout-header__title">BioFit Protein</span>
+        </a>
+        <a href="index.html#productos" class="checkout-back">
+            <span class="material-symbols-outlined">arrow_back</span>
+            Volver a la tienda
+        </a>
+    </div>
+</header>
+
+<main class="checkout-main">
+    <!-- Carrito vacío -->
+    <div id="empty-cart" class="empty-cart hidden">
+        <span class="material-symbols-outlined">shopping_cart_off</span>
+        <h2>Tu carrito está vacío</h2>
+        <p>Agrega productos antes de continuar con el pago.</p>
+        <a href="index.html#productos">Ver productos</a>
+    </div>
+
+    <!-- Confirmación de compra -->
+    <div id="checkout-confirmation" class="checkout-confirmation hidden">
+        <div class="checkout-confirmation__icon">
+            <span class="material-symbols-outlined">check_circle</span>
+        </div>
+        <h1 class="checkout-confirmation__title">Gracias por tu compra</h1>
+        <p class="checkout-confirmation__order">Número de pedido: <span id="order-number">—</span></p>
+        <p class="checkout-confirmation__text">Recibirás un correo con los detalles de tu pedido. ¡A entrenar!</p>
+        <a href="index.html" class="checkout-back" style="justify-content:center;font-size:16px;">
+            <span class="material-symbols-outlined">home</span>
+            Volver al inicio
+        </a>
+    </div>
+
+    <!-- Wrapper checkout (carrito con productos) -->
+    <div id="checkout-wrapper" class="hidden">
+
+    <!-- Paso 1: Autenticación obligatoria -->
+    <div id="auth-gate">
+        <div class="checkout-grid">
+            <div class="auth-gate__main">
+                <section class="checkout-section auth-panel">
+                    <h2 class="checkout-section__title">
+                        <span class="material-symbols-outlined">lock</span>
+                        Accede para continuar
+                    </h2>
+                    <p class="auth-panel__subtitle">Debes crear una cuenta o iniciar sesión antes de generar el pago.</p>
+
+                    <div class="auth-tabs" role="tablist">
+                        <button type="button" class="auth-tab active" data-auth-tab="login" role="tab" aria-selected="true">Iniciar sesión</button>
+                        <button type="button" class="auth-tab" data-auth-tab="register" role="tab" aria-selected="false">Crear cuenta</button>
+                    </div>
+
+                    <div id="auth-message" class="checkout-message" hidden role="alert"></div>
+
+                    <!-- Login -->
+                    <form id="login-form" class="auth-form" novalidate>
+                        <div class="checkout-field">
+                            <label for="login-email">Correo electrónico</label>
+                            <input type="email" id="login-email" name="email" placeholder="juan@ejemplo.com" required autocomplete="email"/>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="login-password">Contraseña</label>
+                            <input type="password" id="login-password" name="password" placeholder="Tu contraseña" required autocomplete="current-password"/>
+                        </div>
+                        <button type="submit" class="pay-btn auth-submit-btn">
+                            <span class="material-symbols-outlined">login</span>
+                            Iniciar sesión
+                        </button>
+                    </form>
+
+                    <!-- Registro -->
+                    <form id="register-form" class="auth-form hidden" novalidate>
+                        <div class="checkout-field">
+                            <label for="register-nombre">Nombre completo</label>
+                            <input type="text" id="register-nombre" name="nombre" placeholder="Ej. Juan Pérez" required autocomplete="name"/>
+                        </div>
+                        <div class="checkout-field-row">
+                            <div class="checkout-field">
+                                <label for="register-email">Correo electrónico</label>
+                                <input type="email" id="register-email" name="email" placeholder="juan@ejemplo.com" required autocomplete="email"/>
+                            </div>
+                            <div class="checkout-field">
+                                <label for="register-telefono">Teléfono</label>
+                                <input type="tel" id="register-telefono" name="telefono" placeholder="+57 300 000 0000" autocomplete="tel"/>
+                            </div>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="register-password">Contraseña</label>
+                            <input type="password" id="register-password" name="password" placeholder="Mínimo 6 caracteres" required autocomplete="new-password"/>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="register-password-confirm">Confirmar contraseña</label>
+                            <input type="password" id="register-password-confirm" name="passwordConfirm" placeholder="Repite tu contraseña" required autocomplete="new-password"/>
+                        </div>
+                        <button type="submit" class="pay-btn auth-submit-btn">
+                            <span class="material-symbols-outlined">person_add</span>
+                            Crear cuenta y continuar
+                        </button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Resumen visible durante autenticación -->
+            <aside class="checkout-summary">
+                <section class="checkout-section">
+                    <h2 class="checkout-section__title">
+                        <span class="material-symbols-outlined">receipt_long</span>
+                        Tu pedido
+                    </h2>
+                    <div id="auth-summary-items" class="summary-items"></div>
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="auth-summary-subtotal">$0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>IVA (19%)</span>
+                            <span id="auth-summary-iva">$0</span>
+                        </div>
+                        <div class="summary-row summary-row--total">
+                            <span>Total</span>
+                            <span id="auth-summary-total">$0</span>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Paso 2: Formulario de pago (solo usuarios autenticados) -->
+    <div id="checkout-content" class="hidden">
+        <div class="checkout-grid">
+            <div class="checkout-form-col">
+                <div id="user-banner" class="user-banner">
+                    <div class="user-banner__info">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <span>Hola, <strong id="user-banner-name">Usuario</strong></span>
+                    </div>
+                    <button type="button" id="logout-btn" class="user-banner__logout">Cerrar sesión</button>
+                </div>
+                <form id="checkout-form" novalidate>
+                    <div id="checkout-message" class="checkout-message" hidden role="alert"></div>
+
+                    <!-- Datos de envío -->
+                    <section class="checkout-section">
+                        <h2 class="checkout-section__title">
+                            <span class="material-symbols-outlined">local_shipping</span>
+                            Datos de envío
+                        </h2>
+                        <div class="checkout-field">
+                            <label for="checkout-nombre">Nombre completo</label>
+                            <input type="text" id="checkout-nombre" name="nombre" placeholder="Ej. Juan Pérez" required/>
+                        </div>
+                        <div class="checkout-field-row">
+                            <div class="checkout-field">
+                                <label for="checkout-email">Correo electrónico</label>
+                                <input type="email" id="checkout-email" name="email" placeholder="juan@ejemplo.com" required/>
+                            </div>
+                            <div class="checkout-field">
+                                <label for="checkout-telefono">Teléfono</label>
+                                <input type="tel" id="checkout-telefono" name="telefono" placeholder="+57 300 000 0000" required/>
+                            </div>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="checkout-direccion">Dirección</label>
+                            <input type="text" id="checkout-direccion" name="direccion" placeholder="Calle 123 #45-67, Apto 801" required/>
+                        </div>
+                        <div class="checkout-field">
+                            <label for="checkout-ciudad">Ciudad</label>
+                            <input type="text" id="checkout-ciudad" name="ciudad" placeholder="Bogotá" required/>
+                        </div>
+                    </section>
+
+                    <!-- Método de pago -->
+                    <section class="checkout-section">
+                        <h2 class="checkout-section__title">
+                            <span class="material-symbols-outlined">payments</span>
+                            Método de pago
+                        </h2>
+                        <div class="payment-methods">
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="credit"/>
+                                <span class="payment-method__label">Tarjeta de crédito</span>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="debit"/>
+                                <span class="payment-method__label">Tarjeta débito</span>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="pse"/>
+                                <span class="payment-method__label">PSE</span>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="cash"/>
+                                <span class="payment-method__label">Contra entrega</span>
+                            </label>
+                        </div>
+
+                        <!-- Formulario tarjeta -->
+                        <div id="card-form" class="card-form hidden">
+                            <div class="card-preview">
+                                <div class="card-preview__chip"></div>
+                                <div class="card-preview__number" id="card-preview-number">•••• •••• •••• ••••</div>
+                                <div class="card-preview__footer">
+                                    <div>
+                                        <div class="card-preview__label">Titular</div>
+                                        <div class="card-preview__value" id="card-preview-holder">NOMBRE APELLIDO</div>
+                                    </div>
+                                    <div>
+                                        <div class="card-preview__label">Vence</div>
+                                        <div class="card-preview__value" id="card-preview-expiry">MM/AA</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout-field">
+                                <label for="card-number">Número de tarjeta</label>
+                                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" maxlength="19" inputmode="numeric"/>
+                            </div>
+                            <div class="checkout-field">
+                                <label for="card-holder">Nombre del titular</label>
+                                <input type="text" id="card-holder" name="card-holder" placeholder="Como aparece en la tarjeta"/>
+                            </div>
+                            <div class="checkout-field-row">
+                                <div class="checkout-field">
+                                    <label for="card-expiry">Fecha vencimiento</label>
+                                    <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/AA" maxlength="5" inputmode="numeric"/>
+                                </div>
+                                <div class="checkout-field">
+                                    <label for="card-cvv">CVV</label>
+                                    <input type="text" id="card-cvv" name="card-cvv" placeholder="123" maxlength="4" inputmode="numeric"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            </div>
+
+            <!-- Resumen -->
+            <aside class="checkout-summary">
+                <section class="checkout-section">
+                    <h2 class="checkout-section__title">
+                        <span class="material-symbols-outlined">receipt_long</span>
+                        Resumen de compra
+                    </h2>
+                    <div id="summary-items" class="summary-items"></div>
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summary-subtotal">$0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>IVA (19%)</span>
+                            <span id="summary-iva">$0</span>
+                        </div>
+                        <div class="summary-row summary-row--total">
+                            <span>Total</span>
+                            <span id="summary-total">$0</span>
+                        </div>
+                    </div>
+                    <button type="submit" form="checkout-form" id="pay-btn" class="pay-btn">
+                        <span id="pay-btn-text">Pagar Ahora</span>
+                        <span id="pay-btn-loader" class="pay-btn__loader hidden"></span>
+                    </button>
+                </section>
+            </aside>
+        </div>
+    </div>
+    </div><!-- /checkout-wrapper -->
+</main>
+
+<script src="js/cart.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

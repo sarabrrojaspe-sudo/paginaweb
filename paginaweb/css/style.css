@@ -1,0 +1,101 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.site-logo {
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 4px 8px;
+    object-fit: contain;
+}
+
+.glass-card {
+    background: rgba(30, 32, 32, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(186, 246, 0, 0.1);
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #baf600 0%, #a3d800 100%);
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0c0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e2020;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #baf600;
+}
+
+.nav-link {
+    color: #e2e2e2;
+}
+
+.nav-link:hover {
+    color: #baf600;
+}
+
+.nav-link.active {
+    color: #baf600;
+    font-weight: 700;
+}
+
+.form-message {
+    padding: 12px 16px;
+    border-radius: 0.5rem;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+.form-message.hidden {
+    display: none;
+}
+
+.form-message.success {
+    background: rgba(186, 246, 0, 0.15);
+    border: 1px solid rgba(186, 246, 0, 0.4);
+    color: #baf600;
+}
+
+.form-message.error {
+    background: rgba(255, 180, 171, 0.1);
+    border: 1px solid rgba(255, 180, 171, 0.4);
+    color: #ffb4ab;
+}
+
+.channels-grid {
+    width: 100%;
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 767px) {
+    .channels-grid {
+        max-width: 28rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .channels-grid {
+        max-width: 36rem;
+    }
+}
+
+#btn-solicitar-asesoria {
+    cursor: pointer;
+}

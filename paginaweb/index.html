@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>BioFit Protein | Elite Performance Nutrition</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Hanken+Grotesk:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-background/95 dark:bg-background/95 backdrop-blur-md text-secondary-fixed dark:text-secondary-fixed-dim docked full-width top-0 sticky border-b border-outline-variant/20 shadow-[0_10px_30px_-15px_rgba(5,11,20,0.8)] flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-20 z-50">
+<div class="flex items-center gap-xs">
+<img alt="Logo Biofarma - Salud y Bienestar" class="site-logo h-14 w-auto" src="images/logo.png"/>
+<span class="text-headline-md font-headline-md font-bold text-on-surface dark:text-on-surface uppercase tracking-tight hidden sm:block">BioFit Protein</span>
+</div>
+<nav class="hidden lg:flex items-center gap-gutter" id="main-nav">
+<a class="nav-link font-label-bold text-label-bold transition-colors" href="#inicio" data-section="inicio">Inicio</a>
+<a class="nav-link font-label-bold text-label-bold transition-colors" href="#productos" data-section="productos">Productos</a>
+<a class="nav-link font-label-bold text-label-bold transition-colors" href="#beneficios" data-section="beneficios">Beneficios</a>
+<a class="nav-link font-label-bold text-label-bold transition-colors" href="#nosotros" data-section="nosotros">Nosotros</a>
+<a class="nav-link font-label-bold text-label-bold transition-colors" href="#contacto" data-section="contacto">Contacto</a>
+</nav>
+<div class="header-actions">
+<button type="button" id="cart-toggle" class="cart-toggle" aria-label="Abrir carrito">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span id="cart-count" class="cart-count hidden">0</span>
+</button>
+<button type="button" id="btn-header-comprar" class="cart-btn-header bg-secondary-fixed text-on-secondary-fixed px-md py-sm rounded-full font-label-bold text-label-bold uppercase tracking-wider hover:opacity-90 hover:shadow-[0_0_15px_rgba(186,246,0,0.4)] active:scale-95 transition-all duration-150">
+            Comprar Ahora
+        </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden bg-surface-container-lowest" id="inicio">
+<div class="absolute inset-0 z-0">
+<img alt="BioFit Hero" class="w-full h-full object-cover object-center opacity-40 md:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD334DmydFrUAubcRULsV7Wv199i6DB5oOgqRWd5KJQua_ckz6_JFeIbYxDVtYQSFwRXapYlZ188Oj9bwL0hzK3NVJxncHwBMgUjzMJtZM-OrZ8oncuYRD6O9_FpalQ4FqxfcuCGCM5nwTKM_Kh8mMC0uwVC7Tp-495wNZOeru-g6D6VKB-MKvhSNAyVasZj0mWh-EtoaEBoC3jLzvPh8nApqbHU8__nSAfEcsQOUuIlzexC11adX-HYWPOc5FgdJU86g7ZWyUweIf_"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 max-w-7xl">
+<div class="max-w-2xl space-y-md">
+<h1 class="font-display-xl text-[48px] md:text-display-xl leading-tight text-on-surface uppercase tracking-tight">
+                    Potencia tu <span class="text-secondary-fixed">rendimiento</span> con BioFit Protein
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Proteína premium para mejorar tu recuperación muscular, aumentar tu energía y alcanzar tus objetivos físicos con ciencia aplicada al deporte.
+                </p>
+<div class="flex flex-col sm:flex-row gap-gutter pt-base">
+<button type="button" id="btn-hero-comprar" class="bg-secondary-fixed text-on-secondary-fixed px-xl py-md rounded-lg font-label-bold text-label-bold uppercase tracking-widest hover:shadow-[0_0_25px_rgba(186,246,0,0.5)] transition-all">
+                        Comprar Ahora
+                    </button>
+<button type="button" id="btn-hero-info" class="border border-outline text-on-surface px-xl py-md rounded-lg font-label-bold text-label-bold uppercase tracking-widest hover:bg-surface-variant transition-all">
+                        Más Información
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-xl bg-surface-container-lowest" id="beneficios">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-7xl">
+<div class="text-center mb-xl space-y-xs">
+<p class="text-secondary-fixed font-label-bold text-label-bold uppercase tracking-[0.2em]">Ventajas Competitivas</p>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">¿Por qué elegir BioFit?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Benefit Card 1 -->
+<div class="glass-card p-md rounded-xl space-y-sm group hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Alta concentración</h3>
+<p class="text-on-surface-variant text-body-md">Máximo aporte proteico por servicio para optimizar la síntesis muscular.</p>
+</div>
+<!-- Benefit Card 2 -->
+<div class="glass-card p-md rounded-xl space-y-sm group hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined">flash_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Recuperación rápida</h3>
+<p class="text-on-surface-variant text-body-md">Fórmula diseñada para reparar tejidos después de entrenamientos intensos.</p>
+</div>
+<!-- Benefit Card 3 -->
+<div class="glass-card p-md rounded-xl space-y-sm group hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Energía explosiva</h3>
+<p class="text-on-surface-variant text-body-md">Mantén tus niveles de energía al tope durante toda tu jornada de entreno.</p>
+</div>
+<!-- Benefit Card 4 -->
+<div class="glass-card p-md rounded-xl space-y-sm group hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Calidad garantizada</h3>
+<p class="text-on-surface-variant text-body-md">Ingredientes premium testeados bajo los más altos estándares deportivos.</p>
+</div>
+<!-- Benefit Card 5 -->
+<div class="glass-card p-md rounded-xl space-y-sm group hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Producto original</h3>
+<p class="text-on-surface-variant text-body-md">Sello de autenticidad BioFit para asegurar los resultados que buscas.</p>
+</div>
+<!-- Benefit Card 6 -->
+<div class="glass-card p-md rounded-xl space-y-sm group hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-secondary-fixed group-hover:bg-secondary-fixed group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Atención personalizada</h3>
+<p class="text-on-surface-variant text-body-md">Expertos disponibles para guiarte en tu suplementación diaria.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Product Section -->
+<section class="py-xl bg-surface" id="productos">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-7xl">
+<div class="text-center mb-xl space-y-xs">
+<p class="text-secondary-fixed font-label-bold text-label-bold uppercase tracking-[0.2em]">Tienda Oficial</p>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">Nuestros Productos</h2>
+</div>
+<div class="products-grid">
+<!-- Producto Chocolate 100% Whey -->
+<article class="product-card" data-product-id="whey-chocolate" data-product-name="100% Whey Protein" data-product-price="185000" data-product-image="images/producto-chocolate-whey.png">
+<div class="product-card__img-wrap">
+<img class="product-card__img" src="images/producto-chocolate-whey.png" alt="100% Whey Protein Sabor Chocolate"/>
+</div>
+<div class="product-card__body">
+<span class="product-card__badge">Best Seller</span>
+<h3 class="product-card__name">100% Whey Protein</h3>
+<p class="product-card__desc">Sabor Chocolate · 26g proteína por porción · Lean muscle shake · Sin azúcar añadida.</p>
+<p class="product-card__price"><span class="product-card__price-old">$210.000</span>$185.000</p>
+<button type="button" class="add-to-cart" data-id="whey-chocolate" data-name="100% Whey Protein" data-flavor="Chocolate" data-price="185000" data-image="images/producto-chocolate-whey.png">
+<span class="material-symbols-outlined">shopping_cart</span>
+Agregar al carrito
+</button>
+</div>
+</article>
+<!-- Producto Fresa -->
+<article class="product-card" data-product-id="biopower-fresa" data-product-name="BioPower Protein" data-product-price="185000" data-product-image="images/producto-fresa.png">
+<div class="product-card__img-wrap">
+<img class="product-card__img" src="images/producto-fresa.png" alt="BioPower Protein Sabor Fresa"/>
+</div>
+<div class="product-card__body">
+<span class="product-card__badge">Whey Premium</span>
+<h3 class="product-card__name">BioPower Protein</h3>
+<p class="product-card__desc">Sabor Fresa · 24g proteína · 5.5g BCAAs · 0g azúcar añadida · 2 LB (907 g).</p>
+<p class="product-card__price"><span class="product-card__price-old">$210.000</span>$185.000</p>
+<button type="button" class="add-to-cart" data-id="biopower-fresa" data-name="BioPower Protein" data-flavor="Fresa" data-price="185000" data-image="images/producto-fresa.png">
+<span class="material-symbols-outlined">shopping_cart</span>
+Agregar al carrito
+</button>
+</div>
+</article>
+<!-- Producto Vainilla -->
+<article class="product-card" data-product-id="biopower-vainilla" data-product-name="BioPower Protein" data-product-price="185000" data-product-image="images/producto-vainilla.png">
+<div class="product-card__img-wrap">
+<img class="product-card__img" src="images/producto-vainilla.png" alt="BioPower Protein Sabor Vainilla"/>
+</div>
+<div class="product-card__body">
+<span class="product-card__badge">Whey Premium</span>
+<h3 class="product-card__name">BioPower Protein</h3>
+<p class="product-card__desc">Sabor Vainilla · 24g proteína · 5.5g BCAAs · 0g azúcar añadida · 2 LB (907 g).</p>
+<p class="product-card__price"><span class="product-card__price-old">$210.000</span>$185.000</p>
+<button type="button" class="add-to-cart" data-id="biopower-vainilla" data-name="BioPower Protein" data-flavor="Vainilla" data-price="185000" data-image="images/producto-vainilla.png">
+<span class="material-symbols-outlined">shopping_cart</span>
+Agregar al carrito
+</button>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Why Us (Stats) Section -->
+<section class="py-xl bg-surface-container-lowest" id="nosotros">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-7xl">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">Impacto BioFit</h2>
+<p class="text-on-surface-variant">Datos que respaldan nuestra excelencia en el mercado.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+<div class="space-y-base">
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-headline-md">Consumo Diario</span>
+<span class="text-secondary-fixed font-bold">80%</span>
+</div>
+<div class="h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="progress-bar h-full w-[80%] rounded-full shadow-[0_0_10px_#baf600]"></div>
+</div>
+<p class="text-body-md text-on-surface-variant">De nuestros atletas integran BioFit en su dieta habitual.</p>
+</div>
+<div class="space-y-base">
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-headline-md">Exigencia de Calidad</span>
+<span class="text-secondary-fixed font-bold">75%</span>
+</div>
+<div class="h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="progress-bar h-full w-[75%] rounded-full shadow-[0_0_10px_#baf600]"></div>
+</div>
+<p class="text-body-md text-on-surface-variant">Clientes migran a BioFit buscando mayor pureza de ingredientes.</p>
+</div>
+<div class="space-y-base">
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-headline-md">Interés de Marca</span>
+<span class="text-secondary-fixed font-bold">85%</span>
+</div>
+<div class="h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="progress-bar h-full w-[85%] rounded-full shadow-[0_0_10px_#baf600]"></div>
+</div>
+<p class="text-body-md text-on-surface-variant">Interés creciente en nuestra comunidad fitness cada mes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-xl bg-surface relative overflow-hidden">
+<div class="absolute top-0 right-0 w-96 h-96 bg-secondary-fixed/5 rounded-full blur-[120px] -z-10"></div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-7xl">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase text-center mb-xl">Hablan los Expertos</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-card p-md rounded-xl relative">
+<span class="material-symbols-outlined text-secondary-fixed/30 text-[64px] absolute top-4 right-4">format_quote</span>
+<div class="flex items-center gap-base mb-sm">
+<div class="w-12 h-12 rounded-full bg-surface-variant border border-secondary-fixed/20 overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Close-up portrait of a determined male athlete with sweat on his brow, in a high-contrast dark gym setting. Intense rim lighting highlights his muscular features against a deep charcoal background. The mood is raw, powerful, and focuses on human performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADsihpoGvbGPc8CjGvDwVu0JfZ6wbcSIXVPJRsRbFAZjXQEBfqjhj1qoLyaWD8XC5GedXd0KmB4krTRsTk7_6_nzHttCmppBDW16yZPordzwtvwGJ-dQgI3dEST_TJ4M2LxAR3kvEWuJPvLs8-_e4dcDsbdH0ggzO6wQi7sl1QCl2rmC1DrlkvEIei7CHf63Nb9RETx9_n0ICt2rgm2znEsN8kwiOL1KGmswAOG8RBmGetXnkNfsHYY6DjwBANiYAZV1j3ucxmusdj"/>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Carlos Ruiz</p>
+<p class="text-[12px] text-on-surface-variant uppercase tracking-tighter">Entrenador Pro</p>
+</div>
+</div>
+<p class="text-body-md italic text-on-surface-variant">"La solubilidad de BioFit es de otro nivel. Cero grumos y el sabor a chocolate es brutal después de pierna."</p>
+</div>
+<div class="glass-card p-md rounded-xl relative border-secondary-fixed/40">
+<span class="material-symbols-outlined text-secondary-fixed/30 text-[64px] absolute top-4 right-4">format_quote</span>
+<div class="flex items-center gap-base mb-sm">
+<div class="w-12 h-12 rounded-full bg-surface-variant border border-secondary-fixed/20 overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="A focused female athlete in professional workout gear, backlit by a soft green glow in a dark, modern training facility. The lighting is cinematic and moody, emphasizing strength and dedication. Shallow depth of field blurs the high-tech equipment in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV32Mml7RDeLXn07-SxOsyuD9JERUkF7xW8LBmYvHb3GLzJsZZHvxEjE_pqQDw1_u4sJH0foSwY0uGgq9gn1Z5Hub37adU8-_4rx7hpxA4YDXA3q9RJnJuWqmrjxZIJGeIH4zMzYjiwBXbuBCuAuJj5nS24Vu-b-rS3jvYXgm8LnIcPTUdSP0HIK6noo5sCoEzpEYcE0Y8pdqejbIGdJnmSFlNrRvTDyDJYyQ-GIIDm9tWma0xp6e7Tc4yOZ1ddYOisuSWqQCCAkpo"/>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Mariana Gómez</p>
+<p class="text-[12px] text-on-surface-variant uppercase tracking-tighter">Crossfit Athlete</p>
+</div>
+</div>
+<p class="text-body-md italic text-on-surface-variant">"He notado una recuperación mucho más rápida desde que empecé con BioFit. Mi rendimiento ha subido notablemente."</p>
+</div>
+<div class="glass-card p-md rounded-xl relative">
+<span class="material-symbols-outlined text-secondary-fixed/30 text-[64px] absolute top-4 right-4">format_quote</span>
+<div class="flex items-center gap-base mb-sm">
+<div class="w-12 h-12 rounded-full bg-surface-variant border border-secondary-fixed/20 overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="A muscular man in his late 30s adjusting his gym gear, set in a low-light environment with striking teal and green neon accents. The lighting creates a sharp silhouette and emphasizes the texture of his athletic wear. The aesthetic is dark, moody, and ultra-modern fitness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2NIr0kZFpCKvrSzWgfWdKfoAqx2AduDJDCGjTKnHeZCDfkGWhle9qMN2aU0xBfaHu3S1IoiUhJapyo-9iCU7VhPAmQXRk7T7B9SOKXitHf6ofTRaZjZOk5pZcLAXrIcVy5MUq6bz0y8e1ypgqaiCxk0ASHt0e8PWu5zXx7tsiH5_9wrrKHgrFKPRKel3qBn8Tsrq1FV3U2xfxq8wxwb3J_WQ0kHYZaPtKEZ0t1P98sE6gCashQ7uYw8fexv92YL1-xzNlXgUWuIoe"/>
+</div>
+<div>
+<p class="font-label-bold text-label-bold text-on-surface">Andrés Soto</p>
+<p class="text-[12px] text-on-surface-variant uppercase tracking-tighter">Bodybuilder</p>
+</div>
+</div>
+<p class="text-body-md italic text-on-surface-variant">"La mejor relación calidad-precio en Colombia. La entrega fue rapidísima y el producto 100% original."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Channels Section -->
+<section class="py-xl bg-surface-container-lowest">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-7xl text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-xl">Conecta con BioFit</h2>
+<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-gutter max-w-4xl mx-auto channels-grid">
+<a class="glass-card p-md rounded-xl group hover:bg-secondary-fixed transition-all duration-300 channel-link" href="#contacto" data-section="contacto">
+<span class="material-symbols-outlined text-[32px] text-secondary-fixed group-hover:text-on-secondary mb-xs">storefront</span>
+<p class="font-label-bold text-label-bold group-hover:text-on-secondary">Tienda Física</p>
+</a>
+<a class="glass-card p-md rounded-xl group hover:bg-secondary-fixed transition-all duration-300 channel-link" href="#" data-channel="whatsapp" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[32px] text-secondary-fixed group-hover:text-on-secondary mb-xs">chat</span>
+<p class="font-label-bold text-label-bold group-hover:text-on-secondary">WhatsApp</p>
+</a>
+<a class="glass-card p-md rounded-xl group hover:bg-secondary-fixed transition-all duration-300 channel-link" href="#" data-channel="facebook" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[32px] text-secondary-fixed group-hover:text-on-secondary mb-xs">public</span>
+<p class="font-label-bold text-label-bold group-hover:text-on-secondary">Facebook</p>
+</a>
+<a class="glass-card p-md rounded-xl group hover:bg-secondary-fixed transition-all duration-300 channel-link" href="#" data-channel="instagram" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-[32px] text-secondary-fixed group-hover:text-on-secondary mb-xs">photo_camera</span>
+<p class="font-label-bold text-label-bold group-hover:text-on-secondary">Instagram</p>
+</a>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-xl bg-surface" id="contacto">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-4xl">
+<div class="glass-card p-xl rounded-2xl">
+<div class="text-center mb-md">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase">¿Necesitas ayuda?</h2>
+<p class="text-on-surface-variant">Déjanos tus datos y un experto te contactará.</p>
+</div>
+<form id="contact-form" class="space-y-gutter" novalidate>
+<div id="form-message" class="form-message hidden" role="alert" aria-live="polite"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-xs">
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant" for="contact-nombre">Nombre Completo</label>
+<input id="contact-nombre" name="nombre" class="w-full bg-surface-container border border-outline-variant focus:border-secondary-fixed focus:ring-1 focus:ring-secondary-fixed rounded-lg p-md text-on-surface outline-none transition-all" placeholder="Ej. Juan Pérez" type="text" required/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant" for="contact-email">Correo Electrónico</label>
+<input id="contact-email" name="email" class="w-full bg-surface-container border border-outline-variant focus:border-secondary-fixed focus:ring-1 focus:ring-secondary-fixed rounded-lg p-md text-on-surface outline-none transition-all" placeholder="juan@ejemplo.com" type="email" required/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant" for="contact-telefono">Teléfono</label>
+<input id="contact-telefono" name="telefono" class="w-full bg-surface-container border border-outline-variant focus:border-secondary-fixed focus:ring-1 focus:ring-secondary-fixed rounded-lg p-md text-on-surface outline-none transition-all" placeholder="+57 300 000 0000" type="tel" required/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-bold text-label-bold uppercase text-on-surface-variant" for="contact-mensaje">Mensaje</label>
+<textarea id="contact-mensaje" name="mensaje" class="w-full bg-surface-container border border-outline-variant focus:border-secondary-fixed focus:ring-1 focus:ring-secondary-fixed rounded-lg p-md text-on-surface outline-none transition-all" placeholder="¿En qué podemos asesorarte?" rows="4" required></textarea>
+</div>
+<button type="button" id="btn-solicitar-asesoria" class="w-full bg-secondary-fixed text-on-secondary-fixed py-md rounded-lg font-label-bold text-label-bold uppercase tracking-widest hover:shadow-[0_0_20px_rgba(186,246,0,0.4)] active:scale-95 transition-all cursor-pointer">
+                        Solicitar Asesoría
+                    </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest text-secondary-fixed dark:text-secondary-fixed-dim full-width bottom-0 border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg w-full px-margin-mobile md:px-margin-desktop py-lg max-w-7xl mx-auto">
+<div class="space-y-md">
+<div class="text-headline-md font-headline-md font-bold text-on-surface dark:text-on-surface uppercase flex items-center gap-xs">
+<img alt="Logo Biofarma - Salud y Bienestar" class="site-logo h-12 w-auto" src="images/logo.png"/>
+                    BioFit Protein
+                </div>
+<p class="text-on-surface-variant font-body-md text-body-md">Liderando la nutrición deportiva con ciencia y pasión por el fitness en toda la región.</p>
+<div class="flex gap-md justify-center md:justify-start">
+<a class="footer-social-link text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#" data-channel="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span class="material-symbols-outlined">public</span></a>
+<a class="footer-social-link text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#" data-channel="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="footer-social-link text-on-surface-variant hover:text-secondary-fixed transition-colors" href="#" data-channel="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><span class="material-symbols-outlined">chat</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="space-y-base">
+<h4 class="font-label-bold text-label-bold text-on-surface uppercase">Enlaces</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#inicio">Inicio</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#productos">Productos</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#beneficios">Beneficios</a></li>
+</ul>
+</div>
+<div class="space-y-base">
+<h4 class="font-label-bold text-label-bold text-on-surface uppercase">Compañía</h4>
+<ul class="space-y-xs">
+<li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#nosotros">Nosotros</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#contacto">Contacto</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary-fixed transition-colors font-body-md text-body-md" href="#contacto">Términos</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-md">
+<h4 class="font-label-bold text-label-bold text-on-surface uppercase">Suscríbete</h4>
+<p class="text-on-surface-variant text-body-md">Recibe tips de entrenamiento y ofertas exclusivas.</p>
+<form id="subscribe-form" class="flex" novalidate>
+<input id="subscribe-email" name="email" class="bg-surface-variant text-on-surface px-md py-sm rounded-l-lg border-none focus:ring-0 w-full outline-none" placeholder="Email" type="email" required/>
+<button type="submit" class="bg-secondary-fixed text-on-secondary px-md rounded-r-lg hover:opacity-80 active:opacity-60 transition-all">
+<span class="material-symbols-outlined">send</span>
+</button>
+</form>
+<p id="subscribe-message" class="form-message hidden text-sm mt-xs" role="alert" aria-live="polite"></p>
+</div>
+</div>
+<div class="border-t border-outline-variant/5 py-md text-center">
+<p class="text-on-surface-variant/50 font-label-bold text-label-bold uppercase">© 2024 BioFit Protein. Todos los derechos reservados.</p>
+</div>
+</footer>
+
+<!-- Carrito lateral -->
+<div id="cart-overlay" class="cart-overlay" aria-hidden="true"></div>
+<aside id="cart-panel" class="cart-panel" aria-label="Carrito de compras">
+<div class="cart-panel__header">
+<h2 class="cart-panel__title">Mi Carrito</h2>
+<button type="button" id="cart-close" class="cart-panel__close" aria-label="Cerrar carrito">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="cart-panel__body">
+<div id="cart-empty" class="cart-empty hidden">
+<span class="material-symbols-outlined">shopping_cart_off</span>
+<p>Tu carrito está vacío</p>
+</div>
+<div id="cart-items"></div>
+</div>
+<div class="cart-panel__footer">
+<div class="cart-summary__row"><span>Subtotal</span><span id="cart-subtotal">$0</span></div>
+<div class="cart-summary__row"><span>IVA (19%)</span><span id="cart-iva">$0</span></div>
+<div class="cart-summary__row cart-summary__row--total"><span>Total</span><span id="cart-total">$0</span></div>
+<div class="cart-panel__actions">
+<button type="button" id="cart-checkout" class="cart-btn cart-btn--primary" disabled>Ir a pagar</button>
+<button type="button" id="cart-clear" class="cart-btn cart-btn--secondary" disabled>Vaciar carrito</button>
+</div>
+</div>
+</aside>
+<div id="cart-toast" class="cart-toast" role="status" aria-live="polite">Producto agregado al carrito</div>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="js/script.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

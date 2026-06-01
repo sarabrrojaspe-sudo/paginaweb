@@ -1,0 +1,192 @@
+/* Vista temporal WhatsApp Business — BioFit Protein */
+
+.whatsapp-page {
+    min-height: 100vh;
+    background: #121414;
+    color: #e2e2e2;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.whatsapp-header {
+    background: rgba(18, 20, 20, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(68, 71, 77, 0.3);
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.whatsapp-header__inner {
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.whatsapp-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #baf600;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.whatsapp-main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+}
+
+.whatsapp-panel {
+    background: rgba(30, 32, 32, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(186, 246, 0, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    animation: whatsappFadeIn 0.4s ease;
+}
+
+@keyframes whatsappFadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.whatsapp-panel__banner {
+    background: linear-gradient(135deg, #075e54 0%, #128c7e 100%);
+    padding: 32px 24px;
+    text-align: center;
+}
+
+.whatsapp-panel__avatar {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+.whatsapp-panel__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.whatsapp-panel__name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.whatsapp-panel__status {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.whatsapp-panel__status-dot {
+    width: 8px;
+    height: 8px;
+    background: #25d366;
+    border-radius: 50%;
+}
+
+.whatsapp-panel__body {
+    padding: 28px 24px;
+}
+
+.whatsapp-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.whatsapp-info__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px;
+    background: #282a2b;
+    border-radius: 12px;
+}
+
+.whatsapp-info__item .material-symbols-outlined {
+    color: #baf600;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.whatsapp-info__label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8f9097;
+    margin-bottom: 2px;
+}
+
+.whatsapp-info__value {
+    font-size: 15px;
+    color: #e2e2e2;
+}
+
+.whatsapp-chat-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 24px;
+    background: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.whatsapp-chat-btn:hover {
+    background: #20bd5a;
+    box-shadow: 0 0 24px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+}
+
+.whatsapp-note {
+    margin-top: 20px;
+    padding: 14px;
+    background: rgba(186, 246, 0, 0.08);
+    border: 1px solid rgba(186, 246, 0, 0.2);
+    border-radius: 10px;
+    font-size: 13px;
+    color: #c5c6cd;
+    text-align: center;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    .whatsapp-main {
+        padding: 20px 16px 48px;
+    }
+
+    .whatsapp-panel__body {
+        padding: 20px 16px;
+    }
+}
